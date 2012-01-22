@@ -9,11 +9,9 @@
   var suite = vows.describe('life').addBatch({
     'given an initialized game': {
       topic: function () {
-
         return new Life(64);
       },
       'it is initialized correctly': function (game) {
-        console.log('game is ', game);
         var i
           , j
           ;
@@ -43,9 +41,21 @@
         }, "Should throw error");
       }
     },
-    'given a set-up board': {
+    'given a game with some cells set': {
       topic: function () {
         var l = new Life(64)
+          ;
+        l.setCell(5, 5, 1);
+        return l;
+      },
+      'cells are correctly set': function (t) {
+        assert.strictEqual(t.getCell(5, 5), 1);
+        assert.strictEqual(t.getCell(1, 1), 0);
+      }
+    },
+    'given a set-up board': {
+      topic: function () {
+        var l = new Life(8)
           ;
 
         // Set up figures from original game of life article at
@@ -58,6 +68,10 @@
         return l;
       },
       'it should tick correctly': function (board) {
+        var i = 0
+          , j = 0
+          ;
+
         board.tick();
         assert.strictEqual(board.getCell(5,5), 0);
         assert.strictEqual(board.getCell(5,6), 1);
@@ -66,9 +80,17 @@
         assert.strictEqual(board.getCell(6,7), 0);
         assert.strictEqual(board.getCell(5,7), 0);
         assert.strictEqual(board.getCell(5,4), 0);
+
+        board.tick();
+        for (i = 0; i < board.length; i++) {
+          for (j = 0; j < board.length; j++) {
+            assert.strictEqual(board.getCell(i, j), 0);
+          }
+        }
       }
     }
   });
+
 
   suite.export(module);
 

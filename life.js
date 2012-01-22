@@ -38,7 +38,7 @@
     surroundings.forEach(function (pair) {
       if (isInBounds(grid, x+pair[0], y+pair[1])) {
         if (grid[x+pair[0]][y+pair[1]]) {
-          surroundings++;
+          neighbors++;
         }
       }
     });
@@ -72,6 +72,7 @@
             var neighbors
               ;
             neighbors = numberOfNeighbors(grid, x, y);
+            // If this cell is alive, check the relevant cases
             if (that.getCell(x, y)) {
               if (neighbors < 2) {
                 nextTickGrid[x][y] = 0;
@@ -83,6 +84,8 @@
                 nextTickGrid[x][y] = 0;
               }
             }
+            // Cell is dead, so the only thing that can happen is to become 
+            // alive.
             else {
               if (neighbors === 3) {
                 nextTickGrid[x][y] = 1;
