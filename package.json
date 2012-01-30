@@ -6,7 +6,7 @@
   "version": "0.0.2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jergason/game-of-life.git"
+    "url": "https://github.com/jergason/alive.git"
   },
   "main": "./alive.js",
   "scripts": {
