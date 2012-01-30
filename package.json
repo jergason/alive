@@ -1,14 +1,14 @@
 {
   "author": "Jamison Dance <jergason@gmail.com> (http://jamisondance.com/)",
-  "name": "game-of-life",
+  "name": "alive",
   "description": "A JS implementation of Conway's Game of Life.",
   "keywords": ["game", "life", "conway"],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/jergason/game-of-life.git"
   },
-  "main": "./life.js",
+  "main": "./alive.js",
   "scripts": {
     "test": "vows --spec test/*"
   },

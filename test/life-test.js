@@ -87,6 +87,23 @@
             assert.strictEqual(board.getCell(i, j), 0);
           }
         }
+      },
+      'when we reset it': {
+        topic: function (board) {
+          board.reset();
+          return board;
+        },
+        'it should be clear': function (board) {
+          var x = 0
+            , y = 0
+            ;
+
+          for (x; x < board.size; x++) {
+            for (y; y < board.size; y++) {
+              assert.strictEqual(board.getCell(x, y), 0);
+            }
+          }
+        }
       }
     }
   });
