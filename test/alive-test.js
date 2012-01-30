@@ -2,7 +2,7 @@
   "use strict";
   var vows = require('vows')
     , assert = require('assert')
-    , Life = require(__dirname + '/../life')
+    , Life = require(__dirname + '/../alive')
     , suite
     ;
 
