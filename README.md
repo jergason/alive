@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/jergason/alive.png)](http://travis-ci.org/jergason/alive)
 # Life.js
 
 Life.js is an implementation of Conway's Game of Life in JavaScript. It should
